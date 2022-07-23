@@ -12,4 +12,4 @@ console.log(utils.add(5, 3))
 
 console.log(validator.isEmail('veys@gmail.com'))
 
-console.log(chalk.bold.blue("Hello World"))
+console.log(chalk.bold.inverse.blue("Hello World"))
