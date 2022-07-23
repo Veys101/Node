@@ -5,3 +5,5 @@ const utils = require('./utils.js')
 fs.appendFileSync("notes.txt", "\nHello World...")
 
 console.log(utils.name)
+
+console.log(utils.add(5, 3))
