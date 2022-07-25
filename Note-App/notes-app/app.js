@@ -1,8 +1,9 @@
 const fs = require('fs')
-const utils = require('../utils.js')
+const utils = require('./utils.js')
 const validator = require('validator')
 const chalk = require('chalk')
 const yargs = require('yargs')
+const notes = require('./notes.js')
 
 // fs.writeFileSync("notes.txt", "This file was created by Node.js")
 // fs.appendFileSync("notes.txt", "\nHello World...")
@@ -41,8 +42,7 @@ yargs.command({
         }
     },
     handler: function (argv) {
-        console.log('Title:', argv.title)
-        console.log('Body:', argv.body)
+       notes.addNote(argv.title, argv.body)
     }
 
 })
