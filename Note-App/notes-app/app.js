@@ -1,5 +1,5 @@
 const fs = require('fs')
-const utils = require('./utils.js')
+const utils = require('../utils.js')
 const validator = require('validator')
 const chalk = require('chalk')
 const yargs = require('yargs')
