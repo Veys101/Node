@@ -16,3 +16,8 @@ npm i chalk@2.4.1 -g
 ```
 npm init
 ```
+
+- To run yargs command with builder property
+```
+node app.js add --title="Coca Cola" --body="Soft Drink Manufacturer"
+```
