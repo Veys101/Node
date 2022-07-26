@@ -21,3 +21,11 @@ npm init
 ```
 node app.js add --title="Coca Cola" --body="Soft Drink Manufacturer"
 ```
+- To run debug command 
+```
+node inspect app.js add --title="Ford" --body="Car Manufecturer"
+```
+- Go to this address on Chrome
+```
+chrome://inspect
+```
