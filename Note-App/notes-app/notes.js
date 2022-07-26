@@ -1,6 +1,14 @@
 const fs = require('fs')
 const chalk = require('chalk')
 
+const listNotes = () => {
+    const notes = loadNotes()
+
+    notes.forEach(note => {
+        console.log(note.title)
+    });
+}
+
 const addNote = function (title, body) {
     const notes = loadNotes()
     const duplicateNotes = notes.filter(function(note) {
@@ -53,5 +61,6 @@ const loadNotes = function() {
 
 module.exports = {
     addNote: addNote,
-    removeNote: removeNote
+    removeNote: removeNote,
+    listNotes: listNotes
 }
