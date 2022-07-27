@@ -13,7 +13,11 @@ const options = {
   };
   
 request(options, function (error, response) {
-    if (error) throw new Error(error);
-
-    console.log("Ethereum Price : $" + response.body.lastPrice + "   Time : " + new Date(response.body.closeTime));
+    if (error) {
+        console.log("Unable to connect to service")
+    } else if (response.body.lastPrice != null) {
+        console.log("Ethereum Price : $" + response.body.lastPrice + "   Time : " + new Date(response.body.closeTime));
+    } else {
+        console.log("Some parameter would be wrong")
+    }
 });
