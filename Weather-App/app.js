@@ -6,3 +6,14 @@ request({url: url, json: true}, (error, response) => {
     console.log(response.body.current.weather_descriptions[0] + ". It is currently " + response.body.current.temperature + " degrees out. There is a " + response.body.current.precip + "% chance of rain.")
 })
 
+const options = {
+    method: 'GET',
+    url: 'https://api.binance.com/api/v3/ticker/24hr?symbol=ETHUSDT',
+    json: true
+  };
+  
+request(options, function (error, response) {
+    if (error) throw new Error(error);
+
+    console.log("Ethereum Price : $" + response.body.lastPrice + "   Time : " + new Date(response.body.closeTime));
+});
