@@ -20,7 +20,7 @@ geocode('Philadelphia', (data) => {
 })
 
 
-let temperature = async function getData(callback) {
+let temperature = function getData(callback) {
     const url = 'http://api.weatherstack.com/current?access_key=acc670a05350333481c211a21cdb16f1&query=New York'
     request({url: url, json: true}, (error, response) => {
         callback(response.body.current.temperature)
