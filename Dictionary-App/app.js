@@ -34,6 +34,8 @@ yargs.command({
         const data = dataHandler.ListWords()
         let loopNumber = prompt('> ');
        
+        var correctAnswer = 0
+
         for (let i = 0; i<loopNumber; i++) {
             const index = getRandomInt(data.length)
             console.log(chalk.bold.inverse.blue(data[index].word))
@@ -42,12 +44,16 @@ yargs.command({
               })
             const meaningList = data[index].meaning.split(",").map(element => element.trim());
 			console.log("\n")
-            if(meaningList.includes(answer)) console.log(chalk.bold.inverse.green("Correct"));
+            if(meaningList.includes(answer)){
+                console.log(chalk.bold.inverse.green("Correct"));
+                correctAnswer++;
+            } 
             else console.log(chalk.bold.inverse.red("Wrong"));
             console.log("Meaning:", meaningList);
             console.log("Sentence:", data[index].sentence);
             console.log("============================================================\n")
         }  
+        console.log(chalk.bold.green("Success Rate: %" + (correctAnswer / loopNumber)*100))
         rl.close()
        
     }
