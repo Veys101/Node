@@ -2,6 +2,11 @@
 This repository involves node course projects
 
 ## Node Commands
+- run a js file
+```
+node app.js
+```
+
 - To import node module which has specific version
 ```
 npm i chalk@2.4.1
