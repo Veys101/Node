@@ -2,7 +2,7 @@
 This repository involves node course projects
 
 ## Node Commands
-- run a js file
+- To run a js file
 ```
 node app.js
 ```
