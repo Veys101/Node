@@ -31,7 +31,7 @@ yargs.command({
     command: 'list',
     describe: 'List words randomly',
     handler: async function () {
-        const data = dataHandler.ListWords()
+        var data = dataHandler.ListWords()
         let loopNumber = prompt('> ');
        
         var correctAnswer = 0
@@ -52,6 +52,7 @@ yargs.command({
             console.log("Meaning:", meaningList);
             console.log("Sentence:", data[index].sentence);
             console.log("============================================================\n")
+            data.splice(index, 1)
         }  
         console.log(chalk.bold.green("Success Rate: %" + (correctAnswer / loopNumber)*100))
         rl.close()
