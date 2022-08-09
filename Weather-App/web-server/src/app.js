@@ -19,7 +19,10 @@ app.get('', (req, res) => {
 })
 
 app.get('/help', (req, res) => {
-    res.send('<h1>Help Page</h1>')
+    res.render('help', {
+        title: 'Help me',
+        name: 'Veys'
+    })
 })
 
 
