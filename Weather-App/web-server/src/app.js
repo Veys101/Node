@@ -7,12 +7,14 @@ app.get('', (req, res) => {
 })
 
 app.get('/help', (req, res) => {
-    res.send('Help Page')
+    res.send('<h1>Help Page</h1>')
 })
 
 
 app.get('/about', (req, res) => {
-    res.send("About page")
+    res.send({
+        element: "This is an element"
+    })
 })
 
 app.listen(3000, () => {
