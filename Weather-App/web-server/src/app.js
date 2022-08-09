@@ -1,14 +1,21 @@
 const path = require('path')
 const express = require("express")
 
-const publicDirectoryPath = path.join(__dirname, '../public')
-
 const app = express()
 
+const publicDirectoryPath = path.join(__dirname, '../public')
+
+console.log(path.join(__dirname, '../views'))
+
+app.set('views', path.join(__dirname, '../views'))
+app.set('view engine', 'hbs')
 app.use(express.static(publicDirectoryPath))
 
 app.get('', (req, res) => {
-    res.send('Hello Express!')
+    res.render('index', {
+        title: 'Weather',
+        name: 'Veys'
+    })
 })
 
 app.get('/help', (req, res) => {

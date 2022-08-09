@@ -2,6 +2,10 @@ h2 {
     color: red
 }
 
+h3 {
+    color: white
+}
+
 img {
     width: 250px;
     border: 2px solid white;
