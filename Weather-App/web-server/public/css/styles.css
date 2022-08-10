@@ -12,5 +12,17 @@ img {
 }
 
 body{
+    margin: 0;
     background-color: black;
+}
+
+footer {
+    bottom: 0px;  
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    width: 100%;  
 }
