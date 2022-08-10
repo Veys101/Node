@@ -38,7 +38,7 @@ yargs.command({
 
         for (let i = 0; i<loopNumber; i++) {
             const index = getRandomInt(data.length)
-            console.log(chalk.bold.inverse.blue(data[index].word))
+            console.log(chalk.bgBlue.bold.white(data[index].word))
             let answer = await new Promise(resolve => {
                 rl.question('Answer: ', resolve)
               })
