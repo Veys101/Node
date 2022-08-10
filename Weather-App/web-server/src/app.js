@@ -31,14 +31,14 @@ app.get('/help', (req, res) => {
     res.render('help', {
         title: 'Help me',
         name: 'Veys',
-        message: 'This is help page'
+        helpText: 'This is some helpful text.'
     })
 })
 
-
 app.get('/about', (req, res) => {
-    res.send({
-        element: "This is an element"
+    res.render('about', {
+        title: 'About Me',
+        name: 'Veys'
     })
 })
 
