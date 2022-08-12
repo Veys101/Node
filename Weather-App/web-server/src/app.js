@@ -2,6 +2,9 @@ const path = require('path')
 const express = require("express")
 const hbs = require('hbs')
 const request = require('request')
+const geocode = require('./utils/geocode')
+const forecast = require('./utils/forecast')
+
 
 const app = express()
 
@@ -61,6 +64,32 @@ app.get('/weather', (req, res) => {
                     humidity: response.body.current.humidity,
                     windSpeed: response.body.current.wind_speed
                 }
+            })
+        })
+    }
+    
+})
+
+app.get('/weather-location', (req, res) => {
+
+    if(!req.query.search) {
+        res.send({
+            error: 'You must provide a search term'
+        })
+    } else {
+        geocode(req.query.search, (error, {latitude, longtitude}) => {
+            if(error) {
+                return res.send({error : error})
+            }
+            
+            forecast(latitude, longtitude, (error, foreCastResponse) => {
+                if(error) {
+                    return res.send({error : error})
+                }
+                res.send({
+                    address: req.query.search,
+                    data: foreCastResponse,
+                })
             })
         })
     }
