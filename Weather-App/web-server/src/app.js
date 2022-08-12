@@ -77,7 +77,7 @@ app.get('/weather-location', (req, res) => {
             error: 'You must provide a search term'
         })
     } else {
-        geocode(req.query.search, (error, {latitude, longtitude}) => {
+        geocode(req.query.search, (error, {latitude, longtitude}= {}) => {
             if(error) {
                 return res.send({error : error})
             }
