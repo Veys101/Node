@@ -53,7 +53,21 @@ app.get('/weather', (req, res) => {
             error: 'You must provide a search term'
         })
     } else {
-        request({url: url+req.query.search, json: true}, (error, response) => {
+        request({url: url + req.query.search, json: true}, (error, response) => {
+            if(response.body.error) {
+                return res.send({
+                    weather: {
+                        latitude: "Nan",
+                        longtitude: "Nan",
+                        regionName: "Nan",
+                        temperature: "Nan",
+                        weatherDescription: "Nan",
+                        humidity: "Nan",
+                        windSpeed: "Nan"
+                    }
+                })
+            }
+
             res.send( {
                 weather: {
                     latitude: response.body.location.lat,
