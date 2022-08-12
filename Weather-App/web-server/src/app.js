@@ -55,7 +55,7 @@ app.get('/weather', (req, res) => {
     } else {
         request({url: url+req.query.search, json: true}, (error, response) => {
             res.send( {
-                product: {
+                weather: {
                     latitude: response.body.location.lat,
                     longtitude: response.body.location.lon,
                     regionName: response.body.location.region + "/" + response.body.location.country,
