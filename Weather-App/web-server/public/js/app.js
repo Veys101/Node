@@ -1,4 +1,4 @@
-const url = "http://localhost:3000/weather?search="
+const url = "http://192.168.1.26:3000/weather?search="
 
 console.log("This is client side print")
 
@@ -31,21 +31,21 @@ weatherForm.addEventListener('submit', (e)=> {
     weatherDescription.textContent = ''
     windSpeed.textContent = ''
 
-    fetch(url + location).then((response) => {
-        response.json().then((data) => {
-            if(data.error) {
-                humidity.textContent = ''
-                alert(data.error)
-            } else {
-                console.log(data)
-                humidity.textContent = "Humidty     : " + data.weather.humidity
-                latitude.textContent = "Latitude    : " + data.weather.latitude
-                longtitude.textContent = "Longtitude  : " + data.weather.longtitude
-                regionName.textContent = "RegionName  : " + data.weather.regionName
-                temperature.textContent = "Temperature : " + data.weather.temperature
-                weatherDescription.textContent = "Description : " + data.weather.weatherDescription
-                windSpeed.textContent = "WindSpeed   : " + data.weather.windSpeed
-            } 
-        })
+    fetch(url + location)
+    .then((response) => response.json())
+    .then((data) => {
+        if(data.error) {
+            humidity.textContent = ''
+            alert(data.error)
+        } else {
+            console.log(data)
+            humidity.textContent = "Humidty     : " + data.weather.humidity
+            latitude.textContent = "Latitude    : " + data.weather.latitude
+            longtitude.textContent = "Longtitude  : " + data.weather.longtitude
+            regionName.textContent = "RegionName  : " + data.weather.regionName
+            temperature.textContent = "Temperature : " + data.weather.temperature
+            weatherDescription.textContent = "Description : " + data.weather.weatherDescription
+            windSpeed.textContent = "WindSpeed   : " + data.weather.windSpeed
+        } 
     })
 })
