@@ -1,6 +1,8 @@
 const fs = require('fs')
 const chalk = require('chalk')
 
+const jsonPath = __dirname + "/web-server/public/data/dictionary-3.json" 
+
 const listWords = () => {
     const words = loadWords()
     return words
@@ -44,15 +46,16 @@ const removeWord = function(word) {
 
 const saveWords = function (words) {
     const dataJSON = JSON.stringify(words)
-    fs.writeFileSync('dictionary.json', dataJSON)
+    fs.writeFileSync(jsonPath, dataJSON)
 }
 
 const loadWords = function() {
     try {
-        const dataBuffer = fs.readFileSync('dictionary.json')
+        const dataBuffer = fs.readFileSync(jsonPath)
         const dataJSON = dataBuffer.toString()
         return JSON.parse(dataJSON)
     } catch (e) {
+        console.log(e)
         return []
     }
 }

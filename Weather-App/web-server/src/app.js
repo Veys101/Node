@@ -25,7 +25,7 @@ hbs.registerPartials(partialPath)
 app.use(express.static(publicDirectoryPath))
 
 app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Origin', '192.168.1.26');
 
     // authorized headers for preflight requests
     // https://developer.mozilla.org/en-US/docs/Glossary/preflight_request
@@ -34,7 +34,7 @@ app.use((req, res, next) => {
 
     app.options('*', (req, res) => {
         // allowed XHR methods  
-        res.header('Access-Control-Allow-Methods', 'GET, PATCH, PUT, POST, DELETE, OPTIONS');
+        res.header('Access-Control-Allow-Methods', 'GET, PATCH, PUT, POST, OPTIONS');
         res.send();
     });
 });
