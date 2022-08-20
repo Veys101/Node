@@ -3,7 +3,7 @@ const express = require("express")
 const hbs = require('hbs')
 const data = require('../../data-handle')
 
-const wordsList = data.ListWords()
+var wordsList = data.ListWords()
 
 const app = express()
 
