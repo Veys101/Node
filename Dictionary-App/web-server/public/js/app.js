@@ -1,7 +1,8 @@
 const url = "http://192.168.1.26:3001/getWord"
 
 
-const dictionaryForm = document.querySelector('form')
+const dictionaryForm = document.querySelector('#randomForm')
+const showForm = document.querySelector('#showForm')
 const directory = document.querySelector('input')
 
 const word = document.querySelector('#word')
@@ -21,9 +22,15 @@ dictionaryForm.addEventListener('submit', (e)=> {
             alert(data.error)
         } else {
             console.log(data)
-            word.textContent = data.word
-            meaning.textContent = data.meaning
-            sentence.textContent = data.sentence
+            word.value = data.word
+            meaning.value = data.meaning
+            sentence.value = data.sentence
         } 
     })
+});
+
+showForm.addEventListener('submit', (e)=> {
+    e.preventDefault()
+    meaning.style.display = "block"
+    sentence.style.display = "block"
 })

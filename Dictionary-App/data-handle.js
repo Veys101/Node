@@ -1,7 +1,7 @@
 const fs = require('fs')
 const chalk = require('chalk')
 
-const jsonPath = __dirname + "/web-server/public/data/dictionary-3.json" 
+const jsonPath = __dirname + "/dictionary-3.json" 
 
 const listWords = () => {
     const words = loadWords()

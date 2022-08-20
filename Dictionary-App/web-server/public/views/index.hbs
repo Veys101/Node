@@ -10,16 +10,18 @@
     <body>
         <div class="main-content">
             {{>header}}
-            <form>
-                
-                {{!-- <input placeholder="Directory"> --}}
+            <form id="randomForm">
                 <button>Random</button>
             </form>
-
-            <p id="word"></p>
-            <input id="meaning" type="password">
-            <p id="sentence"></p>
-
+            <p>Word</p>
+            <input id="word" type="text" readonly/>
+            <p>Meaning</p>
+            <input id="meaning" type="text" readonly/>
+            <p>Sentence</p>
+            <textarea id="sentence" rows="4" cols="50" readonly></textarea>
+            <form id="showForm">
+                <button>Show</button>
+            </form>            
             {{>footer}}
         </div>
 
