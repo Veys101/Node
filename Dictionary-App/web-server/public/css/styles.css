@@ -89,11 +89,3 @@ button:hover::before {
 button:hover {
     color: #111;
 }
-
-#meaning {
-    display: none;
-}
-
-#sentence {
-    display: none;
-}

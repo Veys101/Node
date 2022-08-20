@@ -14,6 +14,8 @@ dictionaryForm.addEventListener('submit', (e)=> {
     word.textContent = 'Loading..'
     meaning.textContent = ''
     sentence.textContent = ''
+    meaning.style.display = "none"
+    sentence.style.display = "none"
     fetch(url)
     .then((response) => response.json())
     .then((data) => {
