@@ -20,7 +20,7 @@ hbs.registerPartials(partialPath)
 app.use(express.static(publicDirectoryPath))
 
 app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '192.168.1.26');
+    res.header('Access-Control-Allow-Origin', '*');
 
     // authorized headers for preflight requests
     // https://developer.mozilla.org/en-US/docs/Glossary/preflight_request
@@ -63,6 +63,6 @@ function getWord() {
 }
 
 
-app.listen(() => {
-    console.log("Server is up on port 3001.")
+app.listen(port, () => {
+    console.log("Server is up on port " + port)
 })
