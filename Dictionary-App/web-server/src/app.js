@@ -3,9 +3,10 @@ const express = require("express")
 const hbs = require('hbs')
 const data = require('../../data-handle')
 
-var wordsList = data.ListWords()
-
 const app = express()
+const port = process.env.PORT || 3001
+
+var wordsList = data.ListWords()
 
 const publicDirectoryPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../public/views')
@@ -51,11 +52,6 @@ app.get('/change-diretory', (req, res) => {
     })
 })
 
-
-app.listen(3001, () => {
-    console.log("Server is up on port 3001.")
-})
-
 function getWord() {
 
     if(wordsList.length == 0) wordsList = data.ListWords()
@@ -65,3 +61,8 @@ function getWord() {
 
     return word
 }
+
+
+app.listen(() => {
+    console.log("Server is up on port 3001.")
+})

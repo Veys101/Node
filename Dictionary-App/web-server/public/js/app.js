@@ -1,4 +1,4 @@
-const url = "http://192.168.1.26:3001/getWord"
+const url = "/getWord"
 
 
 const dictionaryForm = document.querySelector('#randomForm')
