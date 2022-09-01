@@ -19,6 +19,8 @@ hbs.registerPartials(partialPath)
 
 app.use(express.static(publicDirectoryPath))
 
+app.use(express.json())
+
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
 
@@ -45,11 +47,17 @@ app.get('/getWord', (req, res) => {
     res.send(getWord())
 })
 
-app.get('/change-diretory', (req, res) => {
-    res.render('index', {
+app.get('/change-directory', (req, res) => {
+    res.render('change-directory', {
         title: "Dictionary App",
         name: "Veys"
     })
+})
+
+app.post('/updateDataFile', (req, res) => {
+    data.saveDataFile(req.body.fileName);
+    wordsList = data.ListWords()
+    res.send("")
 })
 
 function getWord() {

@@ -89,3 +89,7 @@ button:hover::before {
 button:hover {
     color: #111;
 }
+
+#changeDirectory {
+    margin-top: 15px;
+}

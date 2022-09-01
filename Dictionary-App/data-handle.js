@@ -1,7 +1,7 @@
 const fs = require('fs')
 const chalk = require('chalk')
 
-const jsonPath = __dirname + "/dictionary-4.json" 
+let jsonPath = "" 
 
 const listWords = () => {
     const words = loadWords()
@@ -51,6 +51,9 @@ const saveWords = function (words) {
 
 const loadWords = function() {
     try {
+        const fileName = fs.readFileSync(__dirname + "/data/dataIndex.txt", 'utf-8')
+        jsonPath = __dirname + "/data/" + fileName + ".json"
+        console.log(jsonPath)
         const dataBuffer = fs.readFileSync(jsonPath)
         const dataJSON = dataBuffer.toString()
         return JSON.parse(dataJSON)
@@ -60,8 +63,13 @@ const loadWords = function() {
     }
 }
 
+const saveDataFile = function(fileName) {
+    fs.writeFileSync(__dirname + "/data/dataIndex.txt", fileName)
+} 
+
 module.exports = {
     addWord: addWord,
     removeWord: removeWord,
-    ListWords: listWords
+    ListWords: listWords,
+    saveDataFile: saveDataFile
 }

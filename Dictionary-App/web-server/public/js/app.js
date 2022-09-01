@@ -1,9 +1,8 @@
-const url = "/getWord"
+const getUrl = "/getWord"
 
 
 const dictionaryForm = document.querySelector('#randomForm')
 const showForm = document.querySelector('#showForm')
-const directory = document.querySelector('input')
 
 const word = document.querySelector('#word')
 const meaning = document.querySelector('#meaning')
@@ -16,7 +15,7 @@ dictionaryForm.addEventListener('submit', (e)=> {
     sentence.textContent = ''
     meaning.style.display = "none"
     sentence.style.display = "none"
-    fetch(url)
+    fetch(getUrl)
     .then((response) => response.json())
     .then((data) => {
         if(data.error) {

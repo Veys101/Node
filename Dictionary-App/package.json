@@ -14,5 +14,9 @@
     "hbs": "^4.0.1",
     "prompt-sync": "^4.2.0",
     "yargs": "^17.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.2.0"
   }
+  
 }
